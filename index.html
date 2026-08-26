@@ -7,19 +7,20 @@
   <title>Valko Research Project</title>
   <style>
     :root {
-      --ink: #282321;
-      --muted: #746b66;
-      --paper: #fffdfa;
-      --wash: #f5f0ea;
-      --soft: #faf6f1;
-      --accent: #9a514b;
-      --accent-dark: #6d3935;
-      --gold: #aa7b42;
-      --line: #ddd3ca;
-      --hero1: #241e1d;
-      --hero2: #4b2b29;
-      --hero3: #7f4540;
-      --shadow: 0 12px 36px rgba(57, 39, 30, .07);
+      --ink: #172019;
+      --muted: #667268;
+      --paper: #fbfdf9;
+      --wash: #edf3ec;
+      --soft: #f4f8f2;
+      --accent: #4f9f67;
+      --accent-dark: #2f6f45;
+      --lime: #a8e063;
+      --lime-soft: #dff3bf;
+      --line: #ccd9cc;
+      --hero1: #07120b;
+      --hero2: #102b19;
+      --hero3: #245438;
+      --shadow: 0 12px 36px rgba(22, 52, 30, .08);
       --sans: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     * { box-sizing: border-box; }
@@ -33,7 +34,7 @@
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
     }
-    a { color: var(--accent-dark); text-decoration-color: #c9a39f; text-underline-offset: .2em; }
+    a { color: var(--accent-dark); text-decoration-color: #8bb99a; text-underline-offset: .2em; }
     a:hover { color: var(--accent); }
     .wrap { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
     .hero {
@@ -41,14 +42,16 @@
       overflow: hidden;
       padding: 72px 24px 62px;
       color: #fff;
-      background: linear-gradient(125deg, var(--hero1) 0%, var(--hero2) 58%, var(--hero3) 100%);
+      background:
+        radial-gradient(circle at 84% 22%, rgba(168, 224, 99, .14), transparent 22rem),
+        linear-gradient(125deg, var(--hero1) 0%, var(--hero2) 58%, var(--hero3) 100%);
     }
     .hero::after {
       content: "VALKO";
       position: absolute;
       right: -.02em;
       bottom: -.3em;
-      color: rgba(255,255,255,.045);
+      color: rgba(193, 255, 138, .055);
       font: 800 clamp(7rem, 22vw, 18rem)/1 var(--sans);
       letter-spacing: -.08em;
       pointer-events: none;
@@ -59,13 +62,13 @@
       align-items: center;
       gap: 12px;
       margin: 0 0 20px;
-      color: #e2c8b7;
+      color: #c9edb5;
       font-size: .78rem;
       font-weight: 800;
       letter-spacing: .18em;
       text-transform: uppercase;
     }
-    .eyebrow::before { content: ""; width: 38px; height: 1px; background: #d5a36f; }
+    .eyebrow::before { content: ""; width: 38px; height: 1px; background: var(--lime); }
     h1 {
       max-width: 900px;
       margin: 0;
@@ -75,7 +78,7 @@
     .lede {
       max-width: 760px;
       margin: 20px 0 0;
-      color: #eadeda;
+      color: #dfeadf;
       font-size: 1.05rem;
     }
     .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
@@ -90,17 +93,18 @@
       font-size: .88rem;
       font-weight: 800;
     }
-    .button.primary { color: #35251e; background: #e2c19a; }
-    .button.secondary { color: #f7efeb; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.05); }
+    .button.primary { color: #14210f; background: var(--lime); }
+    .button.secondary { color: #eff8ee; border: 1px solid rgba(220,255,209,.28); background: rgba(255,255,255,.045); }
     .stats { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-top: 30px; }
     .stat {
       padding: 11px 13px;
-      border: 1px solid rgba(255,255,255,.2);
+      border: 1px solid rgba(213,255,198,.18);
       border-radius: 999px;
-      background: rgba(255,255,255,.055);
+      background: rgba(255,255,255,.045);
+      color: #d9e7d9;
       font-size: .78rem;
     }
-    .stat strong { color: #fff; margin-right: .35em; font-size: .9rem; }
+    .stat strong { color: #c9f58d; margin-right: .35em; font-size: .9rem; }
     main { padding: 46px 0 86px; }
     .section {
       margin-top: 18px;
@@ -112,35 +116,25 @@
     .section:first-child { margin-top: 0; }
     h2 {
       margin: 0 0 18px;
-      color: #3b302c;
+      color: #1f3325;
       font: 760 clamp(1.35rem, 3vw, 1.9rem)/1.25 var(--sans);
       letter-spacing: -.02em;
     }
-    h3 { margin: 0 0 8px; color: #3b302c; font-size: 1rem; }
+    h3 { margin: 0 0 8px; color: #21362a; font-size: 1rem; }
     p { margin: 0 0 1em; }
     .muted { color: var(--muted); }
-    .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-    .skill {
-      padding: 6px 10px;
-      border: 1px solid #ded2c8;
-      border-radius: 999px;
-      background: #f8f1ea;
-      color: #5c4640;
-      font-size: .84rem;
-      font-weight: 650;
-    }
     .grid2, .grid3, .timeline { display: grid; gap: 12px; margin-top: 16px; }
     .grid2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
     .grid3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
     .timeline { grid-template-columns: repeat(4, minmax(0,1fr)); }
     .card {
       padding: 18px;
-      border: 1px solid #e4d9d0;
+      border: 1px solid #d6e1d5;
       background: var(--soft);
     }
     .date {
       margin-bottom: 7px;
-      color: var(--gold);
+      color: var(--accent-dark);
       font-size: .74rem;
       font-weight: 850;
       letter-spacing: .1em;
@@ -150,10 +144,10 @@
       margin-top: 18px;
       padding: 18px 20px;
       border-left: 4px solid var(--accent);
-      background: #f8efeb;
-      color: #5c413c;
+      background: #eaf5e7;
+      color: #294a32;
     }
-    footer { padding: 30px 20px; color: #cdbeb8; background: #241e1d; text-align: center; font-size: .76rem; letter-spacing: .04em; }
+    footer { padding: 30px 20px; color: #bfd1bf; background: #08110b; text-align: center; font-size: .76rem; letter-spacing: .04em; }
     @media (max-width: 860px) {
       .stats, .timeline { grid-template-columns: repeat(2, minmax(0,1fr)); }
       .grid2, .grid3 { grid-template-columns: 1fr; }
@@ -176,7 +170,7 @@
       <h1>Valko Research Project</h1>
       <p class="lede">Independent research on the Valko / Ao Yin controversy in <em>Love and Deepspace</em>, combining public-source reconstruction, fact-checking, data analysis, and privacy-safe information design.</p>
       <div class="actions">
-        <a class="button primary" href="./reports/2026-06-22_to_06-30_anonymized_findings.md">Read anonymized findings</a>
+        <a class="button primary" href="./reports/2026-06-22_to_06-30_anonymized_findings.html">Read anonymized findings</a>
         <a class="button secondary" href="https://github.com/eureka46/valko-report01">View repository</a>
       </div>
       <div class="stats">
@@ -189,22 +183,6 @@
   </header>
 
   <main class="wrap">
-    <section class="section">
-      <h2>Interests & skills</h2>
-      <div class="skills">
-        <span class="skill">Behavioral science</span>
-        <span class="skill">Psychology</span>
-        <span class="skill">Social media analysis</span>
-        <span class="skill">Research design</span>
-        <span class="skill">Data analysis (R, Python)</span>
-        <span class="skill">Fact-checking & source verification</span>
-        <span class="skill">Information architecture</span>
-        <span class="skill">Writing</span>
-        <span class="skill">Video & audio editing</span>
-        <span class="skill">Performing arts</span>
-      </div>
-    </section>
-
     <section class="section">
       <h2>What this project does</h2>
       <div class="grid2">
