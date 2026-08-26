@@ -4,6 +4,12 @@ Independent research, fact-checking, and data analysis related to Valko / Ao Yin
 
 This repository is the **public, privacy-preserving layer** of a broader research workflow. I am rebuilding the project around verifiable sources, reproducible methods, and readable visualization while avoiding unnecessary exposure of individual fan accounts.
 
+## Public findings
+
+- [Anonymized Findings: Valko / Ao Yin Controversy, 2026-06-22 to 2026-06-30](reports/2026-06-22_to_06-30_anonymized_findings.md)
+
+This public report is derived from a larger reconstructed source set but removes usernames, user IDs, individual post IDs, direct links to fan posts, and other unnecessary account-level attribution.
+
 ## What I work on
 
 - public-source research and fact-checking
