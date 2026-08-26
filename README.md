@@ -4,10 +4,10 @@ Independent research, fact-checking, and data analysis related to Valko / Ao Yin
 
 This repository is the **public, privacy-preserving layer** of a broader research workflow. I am rebuilding the project around verifiable sources, reproducible methods, and readable visualization while avoiding unnecessary exposure of individual fan accounts.
 
-## Public materials
+## Public site
 
-- **Website-style project overview:** [`index.html`](./index.html)
-- **Anonymized findings:** [`reports/2026-06-22_to_06-30_anonymized_findings.md`](./reports/2026-06-22_to_06-30_anonymized_findings.md)
+- **GitHub Pages:** https://eureka46.github.io/valko-report01/
+- **Styled anonymized findings:** https://eureka46.github.io/valko-report01/reports/2026-06-22_to_06-30_anonymized_findings.html
 
 ## Interests & skills
 
