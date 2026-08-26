@@ -9,22 +9,18 @@ This repository is the **public, privacy-preserving layer** of a broader researc
 - **Website-style project overview:** [`index.html`](./index.html)
 - **Anonymized findings:** [`reports/2026-06-22_to_06-30_anonymized_findings.md`](./reports/2026-06-22_to_06-30_anonymized_findings.md)
 
-## Background and interests
+## Interests & skills
 
-My background and working interests sit at the intersection of:
-
-- **Behavioral science**
-- **Psychology**
-- **Social media analysis**
-- **Online communities**
-
-I focus especially on:
-
-- **Research design**
-- **Data analysis** with **R** and **Python**
-- **Fact-checking** and **source verification**
-- **Information architecture**
-- Privacy-safe public research and visualization
+- Behavioral science
+- Psychology
+- Social media analysis
+- Research design
+- Data analysis with R and Python
+- Fact-checking and source verification
+- Information architecture
+- Writing
+- Video and audio editing
+- Performing arts
 
 ## What I work on
 
@@ -72,7 +68,7 @@ Areas I am especially interested in:
 
 I am open to collaboration with people working on **Valko-related web tools, visualization, data, archiving, research infrastructure, or public-interest fandom projects**.
 
-My strongest contribution is at the intersection of **research design + data + fact-checking + behavioral/community analysis + information architecture**. I am particularly interested in collaborating with web engineers and designers who can help turn structured research into things people can actually use.
+I can contribute **research design, data analysis, fact-checking, source verification, and information architecture**, and I am particularly interested in collaborating with web engineers and designers who can help turn structured research into things people can actually use.
 
 ## Status
 
