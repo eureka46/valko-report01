@@ -4,11 +4,27 @@ Independent research, fact-checking, and data analysis related to Valko / Ao Yin
 
 This repository is the **public, privacy-preserving layer** of a broader research workflow. I am rebuilding the project around verifiable sources, reproducible methods, and readable visualization while avoiding unnecessary exposure of individual fan accounts.
 
-## Public findings
+## Public materials
 
-- [Anonymized Findings: Valko / Ao Yin Controversy, 2026-06-22 to 2026-06-30](reports/2026-06-22_to_06-30_anonymized_findings.md)
+- **Website-style project overview:** [`index.html`](./index.html)
+- **Anonymized findings:** [`reports/2026-06-22_to_06-30_anonymized_findings.md`](./reports/2026-06-22_to_06-30_anonymized_findings.md)
 
-This public report is derived from a larger reconstructed source set but removes usernames, user IDs, individual post IDs, direct links to fan posts, and other unnecessary account-level attribution.
+## Background and interests
+
+My background and working interests sit at the intersection of:
+
+- **Behavioral science**
+- **Psychology**
+- **Social media analysis**
+- **Online communities**
+
+I focus especially on:
+
+- **Research design**
+- **Data analysis** with **R** and **Python**
+- **Fact-checking** and **source verification**
+- **Information architecture**
+- Privacy-safe public research and visualization
 
 ## What I work on
 
@@ -22,10 +38,10 @@ This public report is derived from a larger reconstructed source set but removes
 
 ## Toolkit
 
-- **R** — statistical analysis, exploratory analysis, and visualization
-- **Python** — data processing, research automation, text/data workflows, and prototyping
-- **HTML / CSS** — lightweight public reports and interfaces
-- **Git / GitHub** — versioning, documentation, and reproducible research workflows
+- **R** -- statistical analysis, exploratory analysis, and visualization
+- **Python** -- data processing, research automation, text/data workflows, and prototyping
+- **HTML / CSS** -- lightweight public reports and interfaces
+- **Git / GitHub** -- versioning, documentation, and reproducible research workflows
 
 ## Research principles
 
@@ -56,7 +72,7 @@ Areas I am especially interested in:
 
 I am open to collaboration with people working on **Valko-related web tools, visualization, data, archiving, research infrastructure, or public-interest fandom projects**.
 
-My strongest contribution is at the intersection of **research design + data + fact-checking + information architecture**. I am particularly interested in collaborating with web engineers and designers who can help turn structured research into things people can actually use.
+My strongest contribution is at the intersection of **research design + data + fact-checking + behavioral/community analysis + information architecture**. I am particularly interested in collaborating with web engineers and designers who can help turn structured research into things people can actually use.
 
 ## Status
 
