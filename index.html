@@ -3,233 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Independent Valko research project: fact-checking, data analysis, social media analysis, and privacy-safe research outputs.">
+  <meta name="description" content="Independent Valko research project: source reconstruction, fact-checking, data analysis and privacy-safe public research outputs.">
   <title>Valko Research Project</title>
   <style>
-    :root {
-      --ink: #172019;
-      --muted: #667268;
-      --paper: #fbfdf9;
-      --wash: #edf3ec;
-      --soft: #f4f8f2;
-      --accent: #4f9f67;
-      --accent-dark: #2f6f45;
-      --lime: #a8e063;
-      --lime-soft: #dff3bf;
-      --line: #ccd9cc;
-      --hero1: #07120b;
-      --hero2: #102b19;
-      --hero3: #245438;
-      --shadow: 0 12px 36px rgba(22, 52, 30, .08);
-      --sans: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--wash);
-      font-family: var(--sans);
-      font-size: 16px;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--accent-dark); text-decoration-color: #8bb99a; text-underline-offset: .2em; }
-    a:hover { color: var(--accent); }
-    .wrap { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 72px 24px 62px;
-      color: #fff;
-      background:
-        radial-gradient(circle at 84% 22%, rgba(168, 224, 99, .14), transparent 22rem),
-        linear-gradient(125deg, var(--hero1) 0%, var(--hero2) 58%, var(--hero3) 100%);
-    }
-    .hero::after {
-      content: "VALKO";
-      position: absolute;
-      right: -.02em;
-      bottom: -.3em;
-      color: rgba(193, 255, 138, .055);
-      font: 800 clamp(7rem, 22vw, 18rem)/1 var(--sans);
-      letter-spacing: -.08em;
-      pointer-events: none;
-    }
-    .hero-inner { position: relative; z-index: 1; width: min(1080px, 100%); margin: auto; }
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 0 0 20px;
-      color: #c9edb5;
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-    .eyebrow::before { content: ""; width: 38px; height: 1px; background: var(--lime); }
-    h1 {
-      max-width: 900px;
-      margin: 0;
-      font: 750 clamp(2.2rem, 5vw, 4.2rem)/1.12 var(--sans);
-      letter-spacing: -.035em;
-    }
-    .lede {
-      max-width: 760px;
-      margin: 20px 0 0;
-      color: #dfeadf;
-      font-size: 1.05rem;
-    }
-    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 8px 15px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: .88rem;
-      font-weight: 800;
-    }
-    .button.primary { color: #14210f; background: var(--lime); }
-    .button.secondary { color: #eff8ee; border: 1px solid rgba(220,255,209,.28); background: rgba(255,255,255,.045); }
-    .stats { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-top: 30px; }
-    .stat {
-      padding: 11px 13px;
-      border: 1px solid rgba(213,255,198,.18);
-      border-radius: 999px;
-      background: rgba(255,255,255,.045);
-      color: #d9e7d9;
-      font-size: .78rem;
-    }
-    .stat strong { color: #c9f58d; margin-right: .35em; font-size: .9rem; }
-    main { padding: 46px 0 86px; }
-    .section {
-      margin-top: 18px;
-      padding: 34px 36px;
-      border: 1px solid var(--line);
-      background: var(--paper);
-      box-shadow: var(--shadow);
-    }
-    .section:first-child { margin-top: 0; }
-    h2 {
-      margin: 0 0 18px;
-      color: #1f3325;
-      font: 760 clamp(1.35rem, 3vw, 1.9rem)/1.25 var(--sans);
-      letter-spacing: -.02em;
-    }
-    h3 { margin: 0 0 8px; color: #21362a; font-size: 1rem; }
-    p { margin: 0 0 1em; }
-    .muted { color: var(--muted); }
-    .grid2, .grid3, .timeline { display: grid; gap: 12px; margin-top: 16px; }
-    .grid2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .grid3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .timeline { grid-template-columns: repeat(4, minmax(0,1fr)); }
-    .card {
-      padding: 18px;
-      border: 1px solid #d6e1d5;
-      background: var(--soft);
-    }
-    .date {
-      margin-bottom: 7px;
-      color: var(--accent-dark);
-      font-size: .74rem;
-      font-weight: 850;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-    .note {
-      margin-top: 18px;
-      padding: 18px 20px;
-      border-left: 4px solid var(--accent);
-      background: #eaf5e7;
-      color: #294a32;
-    }
-    footer { padding: 30px 20px; color: #bfd1bf; background: #08110b; text-align: center; font-size: .76rem; letter-spacing: .04em; }
-    @media (max-width: 860px) {
-      .stats, .timeline { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .grid2, .grid3 { grid-template-columns: 1fr; }
-      .section { padding: 28px 26px; }
-    }
-    @media (max-width: 540px) {
-      body { font-size: 15px; }
-      .wrap { width: calc(100% - 28px); }
-      .hero { padding: 54px 18px 48px; }
-      .stats, .timeline { grid-template-columns: 1fr; }
-      .stat { border-radius: 10px; }
-      .section { padding: 24px 20px; }
-    }
+    :root{--ink:#172019;--muted:#667268;--paper:#fbfdf9;--wash:#edf3ec;--soft:#f4f8f2;--accent:#4f9f67;--accent-dark:#2f6f45;--lime:#a8e063;--lime-soft:#dff3bf;--line:#ccd9cc;--hero1:#07120b;--hero2:#102b19;--hero3:#245438;--shadow:0 12px 36px rgba(22,52,30,.08);--sans:Inter,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--wash);font-family:var(--sans);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}a{color:var(--accent-dark);text-decoration-color:#8bb99a;text-underline-offset:.2em}a:hover{color:var(--accent)}.wrap{width:min(1080px,calc(100% - 40px));margin:0 auto}.hero{position:relative;overflow:hidden;padding:72px 24px 62px;color:#fff;background:radial-gradient(circle at 84% 22%,rgba(168,224,99,.14),transparent 22rem),linear-gradient(125deg,var(--hero1) 0%,var(--hero2) 58%,var(--hero3) 100%)}.hero::after{content:"VALKO";position:absolute;right:-.02em;bottom:-.3em;color:rgba(193,255,138,.055);font:800 clamp(7rem,22vw,18rem)/1 var(--sans);letter-spacing:-.08em;pointer-events:none}.hero-inner{position:relative;z-index:1;width:min(1080px,100%);margin:auto}.eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 20px;color:#c9edb5;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.eyebrow::before{content:"";width:38px;height:1px;background:var(--lime)}h1{max-width:900px;margin:0;font:750 clamp(2.2rem,5vw,4.2rem)/1.12 var(--sans);letter-spacing:-.035em}.lede{max-width:790px;margin:20px 0 0;color:#dfeadf;font-size:1.05rem}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 15px;border-radius:999px;text-decoration:none;font-size:.87rem;font-weight:800}.button.primary{color:#14210f;background:var(--lime)}.button.secondary{color:#eff8ee;border:1px solid rgba(220,255,209,.28);background:rgba(255,255,255,.045)}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:30px}.stat{padding:11px 13px;border:1px solid rgba(213,255,198,.18);border-radius:999px;background:rgba(255,255,255,.045);color:#d9e7d9;font-size:.78rem}.stat strong{color:#c9f58d;margin-right:.35em;font-size:.9rem}main{padding:46px 0 86px}.section{margin-top:18px;padding:34px 36px;border:1px solid var(--line);background:var(--paper);box-shadow:var(--shadow)}.section:first-child{margin-top:0}h2{margin:0 0 18px;color:#1f3325;font:760 clamp(1.35rem,3vw,1.9rem)/1.25 var(--sans);letter-spacing:-.02em}h3{margin:0 0 8px;color:#21362a;font-size:1rem}p{margin:0 0 1em}.muted{color:var(--muted)}.grid2,.grid3,.timeline{display:grid;gap:12px;margin-top:16px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.timeline{grid-template-columns:repeat(4,minmax(0,1fr))}.card{padding:18px;border:1px solid #d6e1d5;background:var(--soft)}.date{margin-bottom:7px;color:var(--accent-dark);font-size:.74rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase}.post-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}.post{position:relative;padding:18px 18px 18px 21px;border:1px solid #d6e1d5;background:#fff}.post::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}.post-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}.pill{padding:3px 8px;border-radius:999px;background:#e3f1de;color:#31543a;font-size:.72rem;font-weight:800}.post p{margin:0}.terms{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.term{padding:6px 10px;border:1px solid #caddc8;border-radius:999px;background:#eef6ea;color:#31543a;font-size:.82rem;font-weight:700}.note{margin-top:18px;padding:18px 20px;border-left:4px solid var(--accent);background:#eaf5e7;color:#294a32}.link-card{display:block;height:100%;padding:20px;border:1px solid #d6e1d5;background:var(--soft);text-decoration:none}.link-card strong{display:block;margin-bottom:6px;color:#1f3325;font-size:1.05rem}.link-card span{color:var(--muted);font-size:.9rem}.link-card:hover{border-color:#8fba96;background:#eef6ea}footer{padding:30px 20px;color:#bfd1bf;background:#08110b;text-align:center;font-size:.76rem;letter-spacing:.04em}@media(max-width:860px){.stats,.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2,.grid3,.post-grid{grid-template-columns:1fr}.section{padding:28px 26px}}@media(max-width:540px){body{font-size:15px}.wrap{width:calc(100% - 28px)}.hero{padding:54px 18px 48px}.stats,.timeline{grid-template-columns:1fr}.stat{border-radius:10px}.section{padding:24px 20px}}
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-inner">
-      <p class="eyebrow">Independent fan research</p>
-      <h1>Valko Research Project</h1>
-      <p class="lede">Independent research on the Valko / Ao Yin controversy in <em>Love and Deepspace</em>, combining public-source reconstruction, fact-checking, data analysis, and privacy-safe information design.</p>
-      <div class="actions">
-        <a class="button primary" href="./reports/2026-06-22_to_06-30_anonymized_findings.html">Read anonymized findings</a>
-        <a class="button secondary" href="https://github.com/eureka46/valko-report01">View repository</a>
-      </div>
-      <div class="stats">
-        <div class="stat"><strong>217</strong>records in working set</div>
-        <div class="stat"><strong>202</strong>URLs directly re-checked</div>
-        <div class="stat"><strong>15</strong>indirectly verified records</div>
-        <div class="stat"><strong>R + Python</strong>analysis / processing</div>
-      </div>
-    </div>
-  </header>
+<header class="hero"><div class="hero-inner"><p class="eyebrow">Independent fan research</p><h1>Valko Research Project</h1><p class="lede">A public, privacy-preserving reconstruction of the Valko / Ao Yin controversy in <em>Love and Deepspace</em>. The project combines source verification, chronology, discourse analysis and structured public outputs rather than reducing the event to a single retrospective narrative.</p><div class="actions"><a class="button primary" href="./reports/2026-06-22_to_06-30_source_timeline.html">Explore anonymized source timeline</a><a class="button secondary" href="./reports/2026-06-22_to_06-30_anonymized_findings.html">Analysis & findings</a><a class="button secondary" href="./methods/collection-ethics.html">Methods & ethics</a><a class="button secondary" href="https://github.com/eureka46/valko-report01">Repository</a></div><div class="stats"><div class="stat"><strong>217</strong>records in working set</div><div class="stat"><strong>202</strong>URLs directly re-checked</div><div class="stat"><strong>15</strong>separately audited records</div><div class="stat"><strong>29</strong>public post-level examples</div></div></div></header>
+<main class="wrap">
+<section class="section"><h2>What the underlying posts looked like</h2><p class="muted">The research was built from individual public traces, not just high-level summaries. These examples are paraphrased and anonymized; fan usernames, IDs and direct fan-post links are removed.</p><div class="post-grid">
+<article class="post"><div class="post-meta"><span class="pill">Jun 22</span><span class="pill">Existing-LI fan</span><span class="pill">counterexample</span></div><p>A player who primarily supported an existing LI welcomed Valko and expressed interest in joining or continuing the game because of the new character.</p></article>
+<article class="post"><div class="post-meta"><span class="pill">Jun 23-24</span><span class="pill">Rafayel context</span><span class="pill">停氪</span></div><p>Spending tactics were already diverging: full boycott, temporary pause, skipping only the new-LI pool, or continuing to spend on one's favorite character.</p></article>
+<article class="post"><div class="post-meta"><span class="pill">Jun 28</span><span class="pill">#恨与浅地#</span><span class="pill">community crossover</span></div><p>A participant in a pre-existing anti-company supertopic described arriving there after quitting the game, showing that the space existed before Valko but could receive new participants during the controversy.</p></article>
+<article class="post"><div class="post-meta"><span class="pill">Jun 29 / before 13:00</span><span class="pill">女性安全</span><span class="pill">external mobilization</span></div><p>Before A-0731 became dominant, a post was already tagging women's media and public-safety related accounts. External-facing mobilization did not begin with the A-0731 frame.</p></article>
+<article class="post"><div class="post-meta"><span class="pill">Jun 29 / 13:00-16:00</span><span class="pill">A-0731</span><span class="pill">propagation sequence</span></div><p>The recovered sequence separates explicit identification of A-0731, historical-trauma framing, media tagging, integration with women's-safety concerns, later speculative associations, mass amplification and internal criticism.</p></article>
+<article class="post"><div class="post-meta"><span class="pill">Jun 30 / after 20:00</span><span class="pill">正常上线</span><span class="pill">fragmentation</span></div><p>Within minutes of cancellation, some posts returned to character-specific OOC and resource demands, others continued anti-company action, and others explicitly demanded that Valko be released normally or restored.</p></article>
+</div><div class="terms"><span class="term">#恨与浅地#</span><span class="term">A-0731</span><span class="term">停氪</span><span class="term">停登</span><span class="term">女性安全</span><span class="term">女性主体性</span><span class="term">产能</span><span class="term">OOC</span><span class="term">混池</span><span class="term">正常上线</span></div><div class="note">The full public timeline contains 29 representative anonymized entries with date bands, community context, observed terms, paraphrased post content, analytical role and evidence notes. It is deliberately closer to the source material than the analysis page.</div></section>
 
-  <main class="wrap">
-    <section class="section">
-      <h2>What this project does</h2>
-      <div class="grid2">
-        <article class="card"><h3>Source reconstruction</h3><p>Reconstructs event sequences from accessible public traces while distinguishing directly verified material from weaker evidence.</p></article>
-        <article class="card"><h3>Fact-checking</h3><p>Separates findings, hypotheses, questions, and later interpretation instead of collapsing them into a single narrative.</p></article>
-        <article class="card"><h3>Data and discourse analysis</h3><p>Uses structured data workflows to examine timelines, framing shifts, amplification patterns, and community-level dynamics.</p></article>
-        <article class="card"><h3>Public research design</h3><p>Turns research outputs into privacy-safe reports, visual summaries, timelines, and eventually more interactive tools.</p></article>
-      </div>
-    </section>
+<section class="section"><h2>Three layers of the public project</h2><div class="grid3"><a class="link-card" href="./reports/2026-06-22_to_06-30_source_timeline.html"><strong>1. Anonymized Source Timeline</strong><span>Representative post-level material, observed tags / terms, chronology, evidence notes and a downloadable public CSV.</span></a><a class="link-card" href="./reports/2026-06-22_to_06-30_anonymized_findings.html"><strong>2. Analysis & Findings</strong><span>What the reconstructed records support after separating direct evidence, interpretation, rumor and causal claims.</span></a><a class="link-card" href="./methods/collection-ethics.html"><strong>3. Methods & Ethics</strong><span>Collection route, Weibo platform-rule review, privacy safeguards, AoIR ethics and limits on future automated collection.</span></a></div></section>
 
-    <section class="section">
-      <h2>Selected findings: June 22-30 reconstruction</h2>
-      <p class="muted">The public version is anonymized and aggregated. Individual fan usernames, IDs, post IDs, direct links to fan posts, and re-identifying quotations are intentionally excluded.</p>
-      <div class="grid2">
-        <article class="card"><h3>Opposition was not one unified bloc</h3><p>The reconstructed material is more consistent with multiple pre-existing grievances temporarily converging than with one stable group acting for one reason.</p></article>
-        <article class="card"><h3>Existing-character fandom and Valko support could coexist</h3><p>The source set includes counterexamples showing that support for an existing character did not automatically imply opposition to Valko.</p></article>
-        <article class="card"><h3>A-0731 appears to have spread through distributed roles</h3><p>Discovery, reframing, relay, amplification, and external mobilization were not necessarily performed by the same people.</p></article>
-        <article class="card"><h3>The temporary coalition fragmented after cancellation</h3><p>After the cancellation announcement, the overlapping opposition space rapidly split into different strategic and interpretive directions.</p></article>
-      </div>
-    </section>
+<section class="section"><h2>Selected findings</h2><div class="grid2"><article class="card"><h3>Opposition was not one unified bloc</h3><p>Different character communities already carried distinct story, setting, production, card, monetization and promotional grievances. Their interests temporarily overlapped around the sixth-LI issue without becoming identical.</p></article><article class="card"><h3>Existing-character fandom and Valko support could coexist</h3><p>The reconstructed set contains counterexamples showing that primary support for an existing LI did not automatically imply opposition to Valko.</p></article><article class="card"><h3>A-0731 spread through distributed roles</h3><p>Identification, reframing, relay, amplification, external mobilization and internal criticism were not necessarily performed by the same people.</p></article><article class="card"><h3>Cancellation produced immediate divergence</h3><p>Within minutes, the overlapping coalition separated into character-specific demands, continued anti-company action, cancellation criticism, restoration calls and partial-success narratives.</p></article></div></section>
 
-    <section class="section">
-      <h2>Event structure at a glance</h2>
-      <div class="timeline">
-        <article class="card"><div class="date">June 22</div><h3>Pre-existing grievances surface</h3><p>Different fandoms frame the sixth-character issue through existing concerns around resources, story, monetization, identity, and character treatment.</p></article>
-        <article class="card"><div class="date">June 23-28</div><h3>Issue expansion</h3><p>The dispute broadens into production capacity, operator trust, consumer agency, localization, and boycott strategy.</p></article>
-        <article class="card"><div class="date">June 29</div><h3>A-0731 escalation</h3><p>The frame accelerates external-facing mobilization, but the recovered sequence suggests multiple roles rather than one identifiable originator.</p></article>
-        <article class="card"><div class="date">June 30</div><h3>Cancellation and fragmentation</h3><p>The temporary overlap breaks apart into character-specific demands, continued boycott, cancellation criticism, and restoration calls.</p></article>
-      </div>
-    </section>
+<section class="section"><h2>Event structure at a glance</h2><div class="timeline"><article class="card"><div class="date">June 22</div><h3>Distinct grievances converge</h3><p>Existing-character concerns around resources, story, motifs, promotion, monetization and production capacity become attached to the sixth-LI debate.</p></article><article class="card"><div class="date">June 23-28</div><h3>Issue expansion</h3><p>Boycott tactics diverge while discussion broadens into consumer agency, localization, production allocation, women's safety and operator trust.</p></article><article class="card"><div class="date">June 29</div><h3>A-0731 acceleration</h3><p>A distributed chain of identification, historical framing, external mobilization, amplification and counter-criticism becomes visible.</p></article><article class="card"><div class="date">June 30</div><h3>Cancellation and fragmentation</h3><p>The temporary overlap rapidly breaks into different goals, including restoration demands and unresolved character-specific claims.</p></article></div></section>
 
-    <section class="section">
-      <h2>Research principles</h2>
-      <div class="grid3">
-        <article class="card"><h3>Privacy by default</h3><p>Public outputs remove or generalize account-level identifiers wherever possible.</p></article>
-        <article class="card"><h3>Findings are not interpretation</h3><p>Directly supported findings are kept separate from later analytical inference.</p></article>
-        <article class="card"><h3>Traceable methods</h3><p>R, Python, Git, and structured evidence fields support reproducibility, revision history, and clearer audit trails.</p></article>
-      </div>
-      <div class="note">This is an independent fan research project and is not affiliated with Infold Games or Papergames. The reconstructed dataset is not a census of Weibo and should not be interpreted as a population estimate of fandom opinion.</div>
-    </section>
+<section class="section"><h2>Collection, rules & ethics</h2><div class="grid3"><article class="card"><h3>Search-based reconstruction</h3><p>Candidate material was discovered through public-web search and then checked at source level. This dataset was not acquired through a researcher-operated high-frequency crawler directly against Weibo.</p></article><article class="card"><h3>Platform-rule review</h3><p>Weibo's Community Convention Article 54 restricts unauthorized automated or abnormally high-frequency behavior including data extraction. This project does not claim blanket platform approval or a general right to scrape.</p></article><article class="card"><h3>Privacy by design</h3><p>Public outputs remove fan identifiers, direct fan-post links, post IDs and verbatim quotations, and generalize some timestamps to reduce re-identification risk.</p></article></div><div class="note">The detailed methodology page also documents the PRC Personal Information Protection Law Article 27 as a privacy consideration and uses Association of Internet Researchers ethics guidance as a framework for contextual privacy and harm reduction. <a href="./methods/collection-ethics.html"><strong>Read Methods & Ethics →</strong></a></div></section>
 
-    <section class="section">
-      <h2>Collaboration</h2>
-      <p>I am interested in connecting with people working on Valko-related web tools, data visualization, archiving, research infrastructure, or public-interest fandom projects. I can contribute research design, data analysis, fact-checking, source verification, and information architecture.</p>
-    </section>
-  </main>
+<section class="section"><h2>Research principles</h2><div class="grid3"><article class="card"><h3>Findings are not interpretation</h3><p>What a post demonstrably says is kept separate from whether its interpretation is true or whether it caused later events.</p></article><article class="card"><h3>Traceable uncertainty</h3><p>Image-dependent, deleted-original, related-panel-only and otherwise weaker records are treated differently from directly verified public pages.</p></article><article class="card"><h3>No prevalence claims from this set</h3><p>The 217-record reconstruction is not a census or probability sample and is not used to estimate majority opinion within a fandom.</p></article></div></section>
 
-  <footer>Valko Research Project - research / data / fact-checking / source verification / information architecture</footer>
-</body>
-</html>
+<section class="section"><h2>Collaboration</h2><p>I am interested in connecting with people working on Valko-related web tools, data visualization, archiving, research infrastructure, or public-interest fandom projects. I can contribute research design, data analysis, fact-checking, source verification and information architecture.</p></section>
+</main><footer>Valko Research Project - research / data / fact-checking / source verification / information architecture</footer>
+</body></html>
